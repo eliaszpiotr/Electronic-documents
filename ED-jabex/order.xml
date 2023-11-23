@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder>
+    <shipTo country="Poland">
+        <name>Jan Kowalski</name>
+        <city>Poznań</city>
+        <state>Wielkopolskie</state>
+        <zip>62-010</zip>
+    </shipTo>
+    <billTo country="Poland">
+        <name>Robert Lewandowski</name>
+        <city>Warszawa</city>
+        <state>Mazowieckie</state>
+        <zip>82-010</zip>
+    </billTo>
+</purchaseOrder>
