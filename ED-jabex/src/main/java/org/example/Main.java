@@ -1,56 +1,71 @@
 package org.example;
 
+import com.sun.xml.bind.v2.runtime.JAXBContextImpl;
 import generated.ObjectFactory;
 import generated.PurchaseOrder;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
+// System.out.println("Hello world!");
         ObjectFactory factory = new ObjectFactory();
 
         PurchaseOrder order = factory.createPurchaseOrder();
 
+
+        PurchaseOrder.BillTo billTo = factory.createPurchaseOrderBillTo();
+
+        billTo.setName("Tomasz Chick");
+        billTo.setCity("Warsaw");
+        billTo.setCountry("Poland");
+        billTo.setZip("00-019");
+        billTo.setState("Mazowieckie");
+        billTo.setStreet("Zlota");
+
+        order.setBillTo(billTo);
+
+
         PurchaseOrder.ShipTo shipTo = factory.createPurchaseOrderShipTo();
 
-        shipTo.setName("Jan Kowalski");
-        shipTo.setCity("Poznań");
+        shipTo.setName("Tomasz Chick");
+        shipTo.setCity("Warsaw");
         shipTo.setCountry("Poland");
-        shipTo.setZip("60-687");
-        shipTo.setState("Wielkopolska");
+        shipTo.setZip("00-019");
+        shipTo.setState("Mazowieckie");
+        shipTo.setStreet("Zlota");
 
         order.setShipTo(shipTo);
 
 
-        PurchaseOrder.BillTo billTo = factory.createPurchaseOrderBillTo();
+// JAXBContext jaxContext = null;
+//
+// try {
+// jaxContext = JAXBContext.newInstance(PurchaseOrder.class);
+// Marshaller marshaller;
+// marshaller = jaxContext.createMarshaller();
+//
+// marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+//
+// File file = new File ("order.xml");
+//
+// marshaller.marshal(order, file);
+// marshaller.marshal(order, System.out);
+// } catch (JAXBException e) {
+// throw new RuntimeException(e);
+// }
 
-
-        billTo.setName("Jan Kowalski");
-        billTo.setCity("Poznań");
-        billTo.setCountry("Poland");
-        billTo.setZip("60-687");
-        billTo.setState("Wielkopolska");
-
-        order.setBillTo(billTo);
-
-        JAXBContext jaxContext = null;
-        Marshaller marshaller;
         try {
-            jaxContext = JAXBContext.newInstance(PurchaseOrder.class);
-            marshaller = jaxContext.createMarshaller();
-
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            JAXBContext jaxContext = JAXBContext.newInstance(PurchaseOrder.class);
+            Unmarshaller unmarshaller = jaxContext.createUnmarshaller();
 
             File file = new File("order.xml");
-
-            marshaller.marshal(order, file);
-            marshaller.marshal(order, System.out);
+            PurchaseOrder wczytane = (PurchaseOrder) unmarshaller.unmarshal(file);
+            System.out.println(wczytane.getBillTo().getName());
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
