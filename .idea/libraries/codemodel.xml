@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="codemodel">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/codemodel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/dtd-parser.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/FastInfoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/istack-commons-runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/javax.activation-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/istack-commons-tools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/jaxb-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/jaxb-jxc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/jaxb-xjc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/jaxb-runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/relaxng-datatype.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/rngom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/stax-ex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/txw2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ED-jabex/lib/xsom.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
